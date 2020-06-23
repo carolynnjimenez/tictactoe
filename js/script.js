@@ -6,8 +6,8 @@ function performLogic(button, tile) {
   if (gameOver === false) {
     $(button).hide();
     $(tile).html(player);
-    changePlayer(player);
     checkWins();
+    changePlayer(player);
     tieGame();
   }
   if(gameOver===true){
@@ -25,7 +25,7 @@ function changePlayer(currPlayer) {
 
 function tieGame() {
   turnsTaken = turnsTaken + 1;
-  if (turnsTaken === 9) {
+  if (turnsTaken === 9 && gameOver === false) {
     $("h1").text("It's a draw!");
     gameOver = true;
   }
